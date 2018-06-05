@@ -5,22 +5,19 @@ import "./Home.css";
 import axios from 'axios';
 
 class Home extends Component {
-	 // default State object
-  // state = {
-  //   contacts: []
-  // };
+	state = {
+		users: []
+	}; 
+	async componentDidMount() {
+   const response = await axios.get('http://localhost:8080/api/users'); // maybe try with the full url if this doesnt work
 
-  // componentDidMount() {
-  //  axios
-  // .get("https://jsonplaceholder.typicode.com/users")
-  // .then(function(response) {
-  //   console.log(response);
-  // })
-  // .catch(function(error) {
-  //   console.log(error);
-  // });
+   this.setState({users: response.data.data});	
+}
 
-	render() {
+	render()
+
+	 {
+	 	// console.log(this.state)
 		return( 
 			<div>
 			
@@ -28,7 +25,7 @@ class Home extends Component {
 
 			
 
-			<Userlist />
+			<Userlist users={this.state.users} />
 			<div>
 				<ul>
 					

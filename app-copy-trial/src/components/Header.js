@@ -8,7 +8,7 @@ class Home extends Component {
 			<div>
 					<div id="banner-2" class="container">
 							<div>
-							 <img id="logo" src="../assets/img/logo.gif" alt="" width="250px" height="250px" />
+							 
 							 <span>
 							 		<h1>Dynamo</h1>
 									
